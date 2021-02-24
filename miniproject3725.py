@@ -1,6 +1,7 @@
 import re 
 file = open("C:\\Users\\99003725\\Documents\\GitHub\\python\\text.txt","r")
 input_word=input("enter the word to be searched:")
+count=0
 s=" " 
 while s:
     s=file.read()
@@ -10,9 +11,16 @@ while s:
         file2 = open("C:\\Users\\99003725\\Documents\\GitHub\\python\\outputfile.txt",'a')
         file2.write(str(len(pattern)))
         file3 = open("C:\\Users\\99003725\\Documents\\GitHub\\python\\outputstring.txt",'a')
-        for i in pattern:
-            file3.write(i+'\n')
-           
+        #m=s.readline()
+        #k=s.strip(" ")
+        #m=k.strip("")
+        x=re.split("-",s)
+        print(x)
+        y=len(x)
+        for i in range(0,y):
+            if(x[i]==input_word):
+                file3.write("\n"+x[i-1]+" "+x[i]+" "+x[i+1])
+            
         
        
         
