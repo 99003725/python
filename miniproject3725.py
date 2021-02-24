@@ -5,7 +5,7 @@ count=0
 s=" " 
 while s:
     s=file.read()
-    pattern = re.findall(input_word, s,re.M|re.I)
+    pattern = re.match(input_word, s,re.M|re.I)
     if pattern:
         print(len(pattern))
         file2 = open("C:\\Users\\99003725\\Documents\\GitHub\\python\\outputfile.txt",'a')
@@ -14,7 +14,7 @@ while s:
         #m=s.readline()
         #k=s.strip(" ")
         #m=k.strip("")
-        x=re.split("-",s)
+        x=re.split("",s)
         print(x)
         y=len(x)
         for i in range(0,y):
