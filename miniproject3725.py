@@ -1,24 +1,23 @@
+
 import re 
-file = open("C:\\Users\\99003725\\Documents\\GitHub\\python\\text.txt","r")
+file = open("text.txt","r")
 input_word=input("enter the word to be searched:")
-count=0
+file3 = open(input_word+".txt",'a')
+#count=0
 s=" " 
 while s:
     s=file.read()
-    pattern = re.match(input_word, s,re.M|re.I)
+    pattern = re.findall(input_word, s,re.M|re.I)
     if pattern:
-        print(len(pattern))
-        file2 = open("C:\\Users\\99003725\\Documents\\GitHub\\python\\outputfile.txt",'a')
-        file2.write(str(len(pattern)))
-        file3 = open("C:\\Users\\99003725\\Documents\\GitHub\\python\\outputstring.txt",'a')
-        #m=s.readline()
-        #k=s.strip(" ")
-        #m=k.strip("")
-        x=re.split("",s)
+        file3.write("count:"+str(len(pattern)))
+        w=s.split()
+        x=re.split('\W',str(w))
+        x = list(filter(None, x))
         print(x)
         y=len(x)
         for i in range(0,y):
-            if(x[i]==input_word):
+            out=re.fullmatch(input_word,x[i],re.M|re.I)
+            if(out):
                 file3.write("\n"+x[i-1]+" "+x[i]+" "+x[i+1])
             
         
