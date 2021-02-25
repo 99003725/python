@@ -1,3 +1,0 @@
-count:1
-also counts ascount:1
-also counts as
