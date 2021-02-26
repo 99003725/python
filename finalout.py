@@ -31,7 +31,7 @@ class write(project):  # created another class which inherting the parent class
                 # it will traverse entire text and if any match occurs
                 for i in range(0, TEXT_WORD_LENGTH):
                     # if matched the word that user given
-                    output = re.fullmatch(input_word, TEXT[i], re.M | re.I)
+                    output = re.match(input_word, TEXT[i], re.M | re.I)
                     if(output):
                         # it prints the required output
                         file2.write("\n"+TEXT[i-1]+" "+TEXT[i]+" "+TEXT[i+1])
